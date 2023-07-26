@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/login.css" />
+    
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Registration Form</h1>
+      <h4>Please Enter Your Details Here</h4>
+      <form name="RegForm" onsubmit="return validateForm()"
+      method="post" action="home.html" >
+        <label>First Name</label>
+        <input type="text" name="fname"/>
+        <label>Last Name</label>
+        <input type="text" name="lname"/>
+        <label>Course Name</label>
+        <input type="text"/>
+        <label>E-mail ID</label>
+        <input type="email"/>
+        <label>Phone Number</label>
+        <input type="tel" pattern="[6-9]{1}[0-9]{9}" required/>
+        <input type="submit" value="Submit" />
+      </form>
+      
+    </div>
+    <script>
+      function validateForm() {
+  var fn = document.forms["RegForm"]["fname"].value;
+  var ln = document.forms["RegForm"]["lname"].value;
+  if (fn == "" || fn == null) {
+    alert("Please Enter the First Name");
+    return false;
+  }
+  if(ln == "" || ln == null) {
+    alert("Please Enter the Last Name");
+    return false;
+  }
+}
+    </script>
+  </body>
+</html>
